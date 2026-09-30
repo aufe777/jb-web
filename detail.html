@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게시글 상세 | JB 게시판</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/detail.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" aria-label="게시판 홈">JB 게시판</a>
+    <nav aria-label="주 메뉴">
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="index.html#posts">게시판</a></li>
+        <li><a href="#about">소개</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="post-title">
+      <article>
+        <header>
+          <p><mark id="post-category"></mark></p>
+          <h1 id="post-title">게시글을 불러오는 중입니다.</h1>
+          <table aria-label="게시글 정보">
+            <tbody>
+              <tr>
+                <th scope="row">작성자</th>
+                <td id="post-author"></td>
+                <th scope="row">작성일</th>
+                <td id="post-created-at"></td>
+                <th scope="row">조회수</th>
+                <td id="post-views"></td>
+              </tr>
+            </tbody>
+          </table>
+        </header>
+        <div id="post-content" aria-label="게시글 내용"></div>
+      </article>
+      <div id="post-actions" class="write-actions post-actions" hidden>
+        <a id="edit-link" class="cancel-link" href="#">수정</a>
+        <button id="delete-button" class="danger-button" type="button">삭제</button>
+        <a class="list-link" href="index.html">목록으로</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>게시판</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="js/supabase.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <a href="index.html" aria-label="게시판 홈">JB 게시판</a>
+    <nav aria-label="주 메뉴">
+      <ul>
+        <li><a href="index.html">홈</a></li>
+        <li><a href="#posts">게시판</a></li>
+        <li><a href="#about">소개</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="board-title">
+      <h1 id="board-title">게시글 목록</h1>
+
+      <form action="#posts" method="get">
+        <label for="category">카테고리</label>
+        <select id="category" name="category">
+          <option value="all">전체</option>
+          <option value="notice">공지</option>
+          <option value="free">자유</option>
+          <option value="question">질문</option>
+          <option value="share">정보 공유</option>
+        </select>
+
+        <label for="search">검색</label>
+        <input id="search" name="search" type="search" placeholder="제목 또는 내용을 입력하세요">
+        <button type="submit">검색</button>
+      </form>
+
+      <table id="posts">
+        <caption>게시글 목록</caption>
+        <thead>
+          <tr>
+            <th scope="col">번호</th>
+            <th scope="col">카테고리</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+            <th scope="col">작성일</th>
+            <th scope="col">조회</th>
+          </tr>
+        </thead>
+        <tbody id="post-list"></tbody>
+      </table>
+
+      <p><a href="write.html">글쓰기</a></p>
+    </section>
+  </main>
+</body>
+</html>
